@@ -1,1 +1,22 @@
-<app-file-upload (onUploaded)="onUploaded($event)"></app-file-upload>
+<mat-accordion>
+  <mat-expansion-panel [expanded]="currentStep === WorkingStep.Upload" (opened)="changeStep(WorkingStep.Upload)">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <mat-icon>upload</mat-icon>
+        上傳名單
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+
+    <app-file-upload (onUploaded)="onUploaded($event)"></app-file-upload>
+
+  </mat-expansion-panel>
+  <mat-expansion-panel [expanded]="currentStep === WorkingStep.Choose" (opened)="changeStep(WorkingStep.Choose)">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <mat-icon>grading</mat-icon>
+        抽籤吧
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+
+  </mat-expansion-panel>
+</mat-accordion>
