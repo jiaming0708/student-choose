@@ -1,4 +1,5 @@
 import { Component, ElementRef, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-file-upload',
@@ -16,7 +17,7 @@ export class FileUploadComponent implements OnInit {
   onUpload(event: any) {
     const file = event.target.files[0];
     if (!file.name.endsWith('.csv')) {
-      alert('請上傳csv檔案!');
+      this.snackBar.open('請上傳csv檔案!');
       return;
     }
 
@@ -33,7 +34,7 @@ export class FileUploadComponent implements OnInit {
     };
 
     reader.onerror = () => {
-      alert('解析檔案失敗!');
+      this.snackBar.open('解析檔案失敗!');
     };
   }
   private csvStringToArray(csvDataString: string) {
@@ -44,7 +45,7 @@ export class FileUploadComponent implements OnInit {
     return result;
   }
 
-  constructor() { }
+  constructor(private snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
   }
