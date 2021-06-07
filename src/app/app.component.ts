@@ -9,9 +9,10 @@ import { WorkingStep } from './models/working-step';
 export class AppComponent {
   WorkingStep = WorkingStep;
   currentStep = WorkingStep.Upload;
+  uploadData!: string[];
 
-  onUploaded(event: string[]) {
-    console.log('123', event);
+  onUploaded(data: string[]) {
+    this.uploadData = data;
   }
 
   changeStep(newStep: WorkingStep) {

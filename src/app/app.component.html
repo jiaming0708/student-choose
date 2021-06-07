@@ -3,18 +3,27 @@
     <mat-expansion-panel-header>
       <mat-panel-title>
         <mat-icon>upload</mat-icon>
-        上傳名單
+        1.上傳
       </mat-panel-title>
     </mat-expansion-panel-header>
 
     <app-file-upload (onUploaded)="onUploaded($event)"></app-file-upload>
+
+    <div *ngIf="!!uploadData">
+      <mat-list role="list">
+        <div mat-subheader>名冊</div>
+        <mat-list-item role="listitem" *ngFor="let item of uploadData">{{item}}</mat-list-item>
+      </mat-list>
+  
+      <button mat-raised-button (click)="changeStep(WorkingStep.Choose)">下一步</button>
+    </div>
 
   </mat-expansion-panel>
   <mat-expansion-panel [expanded]="currentStep === WorkingStep.Choose" (opened)="changeStep(WorkingStep.Choose)">
     <mat-expansion-panel-header>
       <mat-panel-title>
         <mat-icon>grading</mat-icon>
-        抽籤吧
+        2.抽籤
       </mat-panel-title>
     </mat-expansion-panel-header>
 
