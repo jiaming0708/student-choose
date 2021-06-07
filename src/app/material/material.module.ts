@@ -5,6 +5,9 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSnackBarModule, MAT_SNACK_BAR_DEFAULT_OPTIONS } from '@angular/material/snack-bar';
 import { MatListModule } from '@angular/material/list';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 @NgModule({
   declarations: [],
@@ -16,6 +19,9 @@ import { MatListModule } from '@angular/material/list';
     MatIconModule,
     MatSnackBarModule,
     MatListModule,
+    MatCheckboxModule,
+    MatInputModule,
+    MatFormFieldModule,
   ],
   providers: [
     {

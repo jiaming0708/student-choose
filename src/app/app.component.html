@@ -19,7 +19,7 @@
     </div>
 
   </mat-expansion-panel>
-  <mat-expansion-panel [expanded]="currentStep === WorkingStep.Choose" (opened)="changeStep(WorkingStep.Choose)">
+  <mat-expansion-panel [expanded]="currentStep === WorkingStep.Choose" (opened)="changeStep(WorkingStep.Choose)" [disabled]="!uploadData">
     <mat-expansion-panel-header>
       <mat-panel-title>
         <mat-icon>grading</mat-icon>
@@ -27,5 +27,6 @@
       </mat-panel-title>
     </mat-expansion-panel-header>
 
+    <app-dick-roll [data]="uploadData"></app-dick-roll>
   </mat-expansion-panel>
 </mat-accordion>

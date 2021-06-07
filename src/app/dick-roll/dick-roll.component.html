@@ -1,0 +1,13 @@
+<div>
+  <mat-checkbox>可重複</mat-checkbox>
+  <mat-form-field appearance="standard">
+    <mat-label>挑選個數</mat-label>
+    <input matInput type="number">
+  </mat-form-field>
+  <button mat-raised-button color="primary" (click)="onStartRoll()">選我選我!</button>
+</div>
+
+<mat-list role="list">
+  <div mat-subheader>名冊</div>
+  <mat-list-item role="listitem" *ngFor="let item of data">{{item}}</mat-list-item>
+</mat-list>
