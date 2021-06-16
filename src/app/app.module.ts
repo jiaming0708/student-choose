@@ -11,7 +11,7 @@ import { DickRollComponent } from './dick-roll/dick-roll.component';
   declarations: [
     AppComponent,
     FileUploadComponent,
-    DickRollComponent
+    DickRollComponent,
   ],
   imports: [
     BrowserModule,
