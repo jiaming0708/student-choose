@@ -17,7 +17,7 @@ export class DickRollComponent implements OnInit {
 
   onStartRoll() {
     interval(100).pipe(
-      take(this.totalCount * 3),
+      take(7),
     ).subscribe(() => {
       this.radomPosition = Array(this.totalCount).fill(false);
       for (let i = 0; i < this.pickCount; i++) {
